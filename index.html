@@ -7,12 +7,17 @@
   <script src="index.js" defer></script>
 </head>
 <body>
-  <input type="checkbox" class="native-checkbox">
+  <input type="checkbox"
+    class="native-checkbox"
+    onchange="toggleCheckbox()"
+    >
   <div
-  class="custom-checkbox"
-  tabindex="0"
-  role="checkbox"
-  aria-checked="false"
+    class="custom-checkbox"
+    tabindex="0"
+    role="checkbox"
+    aria-checked="false"
+    onclick="toggleCheckbox()"
+    onkeydown="toggleCheckbox(event)"
   >
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
       <rect width="256" height="256" fill="none"></rect>

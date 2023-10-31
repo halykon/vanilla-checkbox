@@ -1,19 +1,23 @@
 const nativeCheckbox = document.querySelector('.native-checkbox')
 const customCheckbox = document.querySelector('.custom-checkbox')
-let checked = false
+let checked = document.querySelector('.native-checkbox')?.checked ?? false
 
-function toggleCheckbox() {
+
+function toggleCheckbox(event) {
+  if(event && event.type === 'keydown' && event.key !== ' ') return
+  event?.preventDefault()
   checked = !checked
   nativeCheckbox.checked = checked
   customCheckbox.classList.toggle('checked', checked)
-  customCheckbox?.ariaChecked = checked
+  customCheckbox.ariaChecked ??= String(!!checked)
 }
 
-nativeCheckbox?.addEventListener('click', toggleCheckbox)
-customCheckbox?.addEventListener('click', toggleCheckbox)
-customCheckbox?.addEventListener('keydown', (e) => {
-  if (e.key !== ' ') return
+// Alternative to html props with more JS:
+// nativeCheckbox?.addEventListener('click', toggleCheckbox)
+// customCheckbox?.addEventListener('click', toggleCheckbox)
+// customCheckbox?.addEventListener('keydown', (e) => {
+//   if (e.key !== ' ') return
 
-  e.preventDefault()
-  toggleCheckbox()
-})
+//   e.preventDefault()
+//   toggleCheckbox()
+// })
