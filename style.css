@@ -1,0 +1,13 @@
+.custom-checkbox {
+    margin: 3px 3px 3px 4px;
+    width: 13px;
+    height: 13px;
+    border: 1px solid #767676;
+    display: grid;
+    place-items: center;
+    border-radius: 3px;
+    outline-offset: 3px;
+    &:hover {
+        border-color: #4f4f4f;
+    }
+}
