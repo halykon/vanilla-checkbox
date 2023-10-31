@@ -7,6 +7,7 @@
     place-items: center;
     border-radius: 3px;
     outline-offset: 3px;
+    cursor: pointer;
     & svg {
         display: none;
     }
@@ -14,10 +15,10 @@
         border-color: #4f4f4f;
     }
     &.checked {
-        background-color: #0275ff;
-        border-color: #0275ff;
+        background-color: #000;
+        border-color: #000;
         &:hover {
-            background-color: #015cc8;
+            background-color: #000;
         }
         & svg {
             display: block;
