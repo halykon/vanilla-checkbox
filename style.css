@@ -7,7 +7,21 @@
     place-items: center;
     border-radius: 3px;
     outline-offset: 3px;
+    & svg {
+        display: none;
+    }
     &:hover {
         border-color: #4f4f4f;
+    }
+    &.checked {
+        background-color: #0275ff;
+        border-color: #0275ff;
+        &:hover {
+            background-color: #015cc8;
+        }
+        & svg {
+            display: block;
+            color: #fff;
+        }
     }
 }
